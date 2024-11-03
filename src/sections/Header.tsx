@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
               key={link.text}
               onClick={() => handleLinkClick(link.href)}
               className={`cursor-pointer transition-all duration-300 ease-in-out ${
-                link.active ? "text-primary" : "text-white"
+                link.active ? "text-primary" : "text-white hover:text-primary-hover"
               }`}
             >
               {link.text}
