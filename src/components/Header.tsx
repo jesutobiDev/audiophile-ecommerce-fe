@@ -34,12 +34,28 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
   const handleLinkClick = (href: string) => {
     router.push(href);
+    setMenuOpen(!menuOpen);
   };
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Add/remove class to body to disable/enable scrolling
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [menuOpen]);
 
   return (
     <header className="bg-black text-white">
       <nav className="py-7 flex justify-between items-center border-b border-white/30 px-10 lg:px-0 lg:mx-28">
-        <div className="lg:hidden">
+        <div className={`${menuOpen ? 'hidden' : 'flex'} cursor-pointer lg:hidden`} onClick={toggleMenu}>
           <Image
             src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730631671/menu_kuoaxt.svg"
             alt="menu icon"
@@ -53,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           height={25}
           width={143}
         />
-        <ul className="uppercase lg:flex items-center gap-10 text-sm font-medium hidden tracking-wide">
+        <ul className="uppercase lg:flex items-center gap-10 text-sm font-medium tracking-wide bg-red-500 h-screen lg:h-auto lg:bg-transparent">
           {navLinks.map(link => (
             <li
               key={link.text}
@@ -81,3 +97,6 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 };
 
 export default Header;
+
+
+// TODO: Implement mobile navigation

@@ -13,17 +13,20 @@ const Categories = () => {
   const categories: Category[] = [
     {
       name: "Headphones",
-      imageUrl: "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664227/headphone_category_image_qpm0mc.svg",
+      imageUrl:
+        "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664227/headphone_category_image_qpm0mc.svg",
       href: "/headphones",
     },
     {
       name: "Speakers",
-      imageUrl: "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664226/speakers_category_image_o1wmhr.svg",
+      imageUrl:
+        "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664226/speakers_category_image_o1wmhr.svg",
       href: "/speakers",
     },
     {
       name: "Earphones",
-      imageUrl: "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664228/earphones_categories_image_hmcsux.svg",
+      imageUrl:
+        "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730664228/earphones_categories_image_hmcsux.svg",
       href: "/earphones",
     },
   ];
@@ -38,6 +41,14 @@ const Categories = () => {
             width={120}
             height={120}
             className="object-contain"
+          />
+        </div>
+        <div className="top-10 absolute left-0 right-0 mx-auto flex justify-center">
+          <Image
+            src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730673582/blur_tdwemo.svg"
+            alt="blur"
+            width={120}
+            height={5}
           />
         </div>
         <p className="mt-8 text-lg uppercase font-semibold">{category.name}</p>
@@ -55,7 +66,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-10 py-7 lg:px-28 my-28">
+    <div className="grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-10 py-7 lg:px-28 mt-28 mb-7">
       {categories.map((category) => (
         <CategoryItem key={category.name} category={category} />
       ))}
