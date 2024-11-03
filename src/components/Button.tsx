@@ -4,9 +4,8 @@ type ButtonProps = {
   onClick?: () => void;
   children: React.ReactNode;
   type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'tertiary';
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'large';
   className?: string;
 };
 
@@ -14,18 +13,17 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   children,
   type = 'button',
-  disabled = false,
   variant = 'primary',
-  size = 'medium',
+  size = 'small',
   className = '',
 }) => {
-  const baseStyles = 'rounded focus:outline-none transition duration-150 ease-in-out';
+  const baseStyles = 'focus:outline-none transition duration-150 ease-in-out';
   
   // Define styles for variants
   const variantStyles = {
-    primary: 'bg-blue-500 text-white hover:bg-blue-600',
+    primary: 'bg-primary text-white hover:bg-primary-hover px-8 py-4 font-semibold',
     secondary: 'bg-gray-500 text-white hover:bg-gray-600',
-    tertiary: 'bg-transparent text-blue-500 hover:bg-blue-100',
+    tertiary: 'text-black/50 font-semibold hover:text-primary flex gap-2 w-fit items-center uppercase',
   };
 
   // Define styles for sizes
@@ -39,8 +37,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       type={type}
-      disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
     >
       {children}
     </button>
