@@ -17,7 +17,7 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <main>{children}</main>
+        <main className="2xl:container 2xl:mx-auto">{children}</main>
         <Footer />
       </body>
     </html>

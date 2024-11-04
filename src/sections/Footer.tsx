@@ -34,7 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black py-7 px-10 lg:px-28 text-white flex flex-col items-center md:items-start gap-7">
+    <footer className="bg-black py-7 px-10 lg:px-28 text-white flex flex-col items-center md:items-start gap-7 2xl:container 2xl:mx-auto">
       <div className="flex flex-col lg:flex-row gap-7 lg:gap-0 lg:justify-between lg:items-center lg:w-full">
         <Image
           src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730628326/audiophile_2_jqb5fx.svg"

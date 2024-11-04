@@ -2,7 +2,7 @@ import Header from "@/sections/Header";
 import Categories from "@/sections/Categories";
 import About from "@/sections/About";
 
-const page = () => {
+const ProductDetails = () => {
   return (
     <>
       <Header />
@@ -14,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ProductDetails;

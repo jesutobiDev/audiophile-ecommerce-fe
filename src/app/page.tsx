@@ -19,10 +19,6 @@ const HomePage = () => {
       "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730629756/headphone_rgafzt.png",
   };
 
-  const handleProductClick = () => {
-    navigateToProductPage(product.id);
-  };
-
   return (
     <>
       <Header>
@@ -35,7 +31,9 @@ const HomePage = () => {
             <p className="opacity-75 w-10/12 md:text-lg lg:text-base">
               {product.description}
             </p>
-            <Button onClick={handleProductClick}>SEE PRODUCT</Button>
+            <Button onClick={() => navigateToProductPage(product.id)}>
+              SEE PRODUCT
+            </Button>
           </div>
           <div className="w-full lg:w-[55%] relative h-[430px] md:h-[500px] lg:h-[430px]">
             <Image
@@ -50,7 +48,7 @@ const HomePage = () => {
       </Header>
       <main>
         <Categories />
-        <About/>
+        <About />
       </main>
     </>
   );
