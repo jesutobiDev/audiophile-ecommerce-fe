@@ -66,7 +66,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-10 py-7 lg:px-28 mt-28 mb-7">
+    <div className="w-full grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-5 md:px-10 py-7 lg:px-28 mt-28 mb-7">
       {categories.map((category) => (
         <CategoryItem key={category.name} category={category} />
       ))}

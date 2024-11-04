@@ -10,7 +10,7 @@ const HeadphonePage = () => {
       id: "xx99-mark-ii",
       title: "XX99 Mark II Headphones",
       description:
-        "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+        "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
       imageUrl:
         "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730629756/headphone_rgafzt.png",
     },
@@ -18,7 +18,7 @@ const HeadphonePage = () => {
       id: "xx99-mark-ii",
       title: "XX99 Mark II Headphones",
       description:
-        "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+        "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
       imageUrl:
         "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730629756/headphone_rgafzt.png",
     },
@@ -26,7 +26,7 @@ const HeadphonePage = () => {
       id: "xx99-mark-ii",
       title: "XX99 Mark II Headphones",
       description:
-        "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+        "Experience naturThe new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
       imageUrl:
         "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730629756/headphone_rgafzt.png",
     },
@@ -42,7 +42,11 @@ const HeadphonePage = () => {
       <main>
         <div className="my-16 flex flex-col gap-20">
           {Headphones.map((product, index) => (
-            <ProductItem key={product.id} product={product} isReversed={index % 2 !== 0} />
+            <ProductItem
+              key={product.id}
+              product={product}
+              isReversed={index % 2 !== 0}
+            />
           ))}
         </div>
         <Categories />

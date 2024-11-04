@@ -55,15 +55,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
   return (
     <header className="bg-black text-white">
-      <nav className="py-7 flex justify-between items-center border-b border-white/30 px-10 lg:px-0 lg:mx-28">
+      <nav className="py-7 flex justify-between items-center border-b border-white/30 px-5 md:px-10 lg:px-0 lg:mx-28">
         {/* Menu Icon */}
-        <div className="cursor-pointer lg:hidden" onClick={toggleMenu}>
+        <div className="cursor-pointer" onClick={toggleMenu}>
           <Image
-            src={
-              menuOpen
-                ? "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730631671/close_xzjmdr.svg"
-                : "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730631671/menu_kuoaxt.svg"
-            }
+            src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730631671/menu_kuoaxt.svg"
             alt="menu icon"
             height={25}
             width={25}
@@ -78,11 +74,11 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
         />
         {/* Navigation Links */}
         <ul
-          className={`uppercase fixed top-0 left-0 h-screen w-full md:w-1/2 lg:h-auto lg:w-auto flex p-5 md:p-10 lg:p-0 bg-black lg:bg-transparent flex-col lg:flex-row z-20 lg:static lg:items-center gap-10 text-base lg:text-sm font-medium tracking-wide transition-transform duration-300 ${
+          className={`uppercase fixed top-0 left-0 h-screen w-full md:w-1/2 lg:h-auto lg:w-auto flex p-5 py-5 md:p-10 md:py-10 lg:p-0 bg-black lg:bg-transparent flex-col lg:flex-row z-20 lg:static lg:items-center gap-10 text-base lg:text-sm font-medium tracking-wide transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
           }`}
         >
-          <RiCloseLargeFill className="ml-auto text-3xl cursor-pointer" onClick={toggleMenu} />
+          <RiCloseLargeFill className="ml-auto text-3xl cursor-pointer lg:hidden" onClick={toggleMenu} />
           {navLinks.map((link) => (
             <li
               key={link.text}
