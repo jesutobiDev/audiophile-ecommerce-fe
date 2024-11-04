@@ -32,10 +32,10 @@ const FeaturedProducts = () => {
     },
   ];
   return (
-    <div className=" py-7 px-0 lg:px-40">
-      <div className="bg-primary rounded-lg flex justify-between">
-        <div className="w-1/2 flex items-end justify-center relative h-[400px] overflow-hidden">
-          <div className="absolute -bottom-1">
+    <div className=" py-7 px-5 md:px-10 lg:px-40">
+      <div className="bg-primary rounded-lg flex flex-col gap-10 lg:gap-0 lg:flex-row p-20 lg:p-0 justify-between lg:h-[400px]">
+        <div className="lg:w-1/2 flex items-end justify-center relative overflow-hidden">
+          <div className="lg:absolute -bottom-1">
             <Image
               src={FeaturedProducts[0].imageUrl}
               alt={FeaturedProducts[0].title}
