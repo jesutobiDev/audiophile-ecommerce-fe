@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
 
   return (
     <header className="bg-black text-white">
-      <nav className="py-7 flex justify-between items-center border-b border-white/30 px-5 md:px-10 lg:px-0 lg:mx-28">
+      <nav className="py-7 flex justify-between items-center border-b border-white/30 px-5 md:px-10 lg:px-0 lg:mx-40">
         {/* Menu Icon */}
         <div className="cursor-pointer lg:hidden" onClick={toggleMenu}>
           <Image

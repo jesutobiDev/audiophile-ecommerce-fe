@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import { useNavigateToProductPage } from "@/utils/useNavigation";
 import { Product } from "@/types/Product";
 import About from "@/sections/About";
+import FeaturedProducts from "@/sections/FeaturedProducts";
 
 const HomePage = () => {
   const navigateToProductPage = useNavigateToProductPage();
@@ -22,7 +23,7 @@ const HomePage = () => {
   return (
     <>
       <Header>
-        <div className="flex lg:justify-between justify-center items-center py-7 relative px-0 lg:px-28">
+        <div className="flex lg:justify-between justify-center items-center py-7 relative px-0 lg:px-40">
           <div className="w-full md:w-[70%] lg:w-[45%] space-y-4 absolute lg:static z-10 flex flex-col items-center justify-center lg:items-start px-10 lg:px-0 text-center lg:text-left">
             <p className="uppercase opacity-50 tracking-widest font-light text-lg md:text-xl lg:text-sm">
               New Product
@@ -48,6 +49,7 @@ const HomePage = () => {
       </Header>
       <main>
         <Categories />
+        <FeaturedProducts />
         <About />
       </main>
     </>

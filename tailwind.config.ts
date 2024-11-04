@@ -13,7 +13,8 @@ const config: Config = {
         "primary":"#D87D4A",
         "primary-hover":"#fbaf85",
         "error":"#CD2C2C",
-        "light-grey":"#F1F1F1"
+        "light-grey":"#F1F1F1",
+        "dark-grey":"#4C4C4C",
         
       },
     },

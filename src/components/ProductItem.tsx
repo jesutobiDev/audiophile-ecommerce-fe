@@ -13,7 +13,7 @@ const ProductItem = ({ product, isReversed }: ProductItemProps) => {
   const navigateToProductPage = useNavigateToProductPage();
   return (
     <div
-      className={`flex flex-col px-10 gap-10 lg:px-28 py-7 lg:justify-center lg:gap-32 ${
+      className={`flex flex-col px-10 gap-10 lg:px-40 py-7 lg:justify-between ${
         isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
       }`}
     >

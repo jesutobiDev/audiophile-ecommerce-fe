@@ -52,7 +52,7 @@ const Categories = () => {
           />
         </div>
         <p className="mt-8 text-lg uppercase font-semibold">{category.name}</p>
-        <Button variant="tertiary" className="flex items-center gap-2 mt-2">
+        <Button variant="category" className="flex items-center gap-2 mt-2">
           <p>Shop</p>
           <Image
             src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730662912/caret_right_hbwbxw.svg"
@@ -66,7 +66,7 @@ const Categories = () => {
   );
 
   return (
-    <div className="w-full grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-5 md:px-10 py-7 lg:px-28 mt-28 mb-7">
+    <div className="w-full grid grid-cols-1 gap-24 md:grid-cols-3 md:gap-4 lg:gap-6 px-5 md:px-10 py-7 lg:px-40 mt-28 mb-7">
       {categories.map((category) => (
         <CategoryItem key={category.name} category={category} />
       ))}

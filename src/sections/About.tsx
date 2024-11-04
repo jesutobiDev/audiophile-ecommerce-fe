@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const About = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row px-5 md:px-10 gap-10 lg:px-28 py-7 lg:justify-between">
+    <div className="flex flex-col-reverse lg:flex-row px-5 md:px-10 gap-10 lg:px-40 py-7 lg:justify-between">
           <div className="lg:w-[400px] text-center items-center lg:items-start lg:text-left lg:justify-center flex flex-col gap-5">
             <p className="uppercase text-black text-2xl md:text-4xl lg:text-2xl font-semibold w-8/12">
               Bringing you the <span className="text-primary">best</span> audio
