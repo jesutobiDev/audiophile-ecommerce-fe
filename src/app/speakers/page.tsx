@@ -1,14 +1,18 @@
 import Header from "../../sections/Header";
+import Categories from "@/sections/Categories";
+import About from "@/sections/About";
 
 const HomePage = () => {
   return (
     <>
       <Header>
-        <h1 className="uppercase py-20 flex items-center justify-center font-bold text-4xl">Speaker</h1>
+        <h1 className="uppercase py-20 flex items-center justify-center font-bold text-4xl">
+          Speaker
+        </h1>
       </Header>
       <main>
-        {/* Speaker page content */}
-        <p>This is the speaker page content.</p>
+        <Categories />
+        <About />
       </main>
     </>
   );
