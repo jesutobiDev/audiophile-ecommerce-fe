@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
   ];
   return (
     <div className=" py-7 px-5 md:px-10 lg:px-40 space-y-10">
-      <div className="bg-primary relative rounded-lg flex flex-col gap-10 lg:gap-0 lg:flex-row p-20 lg:p-0 justify-between lg:h-[400px]">
+      <div className="bg-primary relative rounded-lg flex flex-col gap-10 lg:gap-0 lg:flex-row px-7 py-10 md:px-20 md:py-16 lg:p-0 justify-between lg:h-[400px]">
         <div className="absolute top-0 left-0 inset-0 h-1/2 lg:h-auto lg:w-1/2">
           <Image
             src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730796609/beats_gnbdsd.svg"
@@ -51,11 +51,11 @@ const FeaturedProducts = () => {
             />
           </div>
         </div>
-        <div className="lg:w-[400px] text-center items-center lg:items-start lg:text-left lg:justify-center flex flex-col gap-5 lg:pr-10">
-          <p className="uppercase text-black text-2xl md:text-4xl lg:text-3xl font-bold w-8/12">
+        <div className="lg:w-[400px] text-center items-center lg:items-start lg:text-left lg:justify-center flex flex-col gap-5 lg:pr-10 text-white">
+          <p className="uppercase text-2xl md:text-5xl lg:text-3xl font-semibold md:w-1/2 lg:w-full">
             {FeaturedProducts[0].title}
           </p>
-          <p className="text-black/50 text-sm md:w-9/12 lg:w-auto">
+          <p className="text-sm md:w-9/12 lg:w-auto">
             {FeaturedProducts[0].description}
           </p>
           <Button
