@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
   // Define styles for variants
   const variantStyles = {
     primary: 'bg-primary text-white hover:bg-primary-hover px-8 py-4 font-semibold uppercase',
-    secondary: 'bg-trnasparent text-black border border-black px-8 py-3 font-semibold uppercase hover:bg-black hover:text-white',
+    secondary: 'bg-transparent text-black border border-black px-8 py-3 font-semibold uppercase hover:bg-black hover:text-white',
     tertiary: 'bg-black text-white hover:bg-dark-grey px-8 py-4 font-semibold uppercase',
     category: 'text-black/50 font-semibold hover:text-primary flex gap-2 w-fit items-center uppercase',
   };

@@ -32,8 +32,15 @@ const FeaturedProducts = () => {
     },
   ];
   return (
-    <div className=" py-7 px-5 md:px-10 lg:px-40">
-      <div className="bg-primary rounded-lg flex flex-col gap-10 lg:gap-0 lg:flex-row p-20 lg:p-0 justify-between lg:h-[400px]">
+    <div className=" py-7 px-5 md:px-10 lg:px-40 space-y-10">
+      <div className="bg-primary relative rounded-lg flex flex-col gap-10 lg:gap-0 lg:flex-row p-20 lg:p-0 justify-between lg:h-[400px]">
+        <div className="absolute top-0 left-0 inset-0 h-1/2 lg:h-auto lg:w-1/2">
+          <Image
+            src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730796609/beats_gnbdsd.svg"
+            alt="beats"
+            layout="fill"
+          />
+        </div>
         <div className="lg:w-1/2 flex items-end justify-center relative overflow-hidden">
           <div className="lg:absolute -bottom-1">
             <Image
@@ -44,7 +51,7 @@ const FeaturedProducts = () => {
             />
           </div>
         </div>
-        <div className="lg:w-[400px] text-center items-center lg:items-start lg:text-left lg:justify-center flex flex-col gap-5">
+        <div className="lg:w-[400px] text-center items-center lg:items-start lg:text-left lg:justify-center flex flex-col gap-5 lg:pr-10">
           <p className="uppercase text-black text-2xl md:text-4xl lg:text-3xl font-bold w-8/12">
             {FeaturedProducts[0].title}
           </p>
@@ -54,6 +61,48 @@ const FeaturedProducts = () => {
           <Button
             variant="tertiary"
             onClick={() => navigateToProductPage(FeaturedProducts[0].id)}
+          >
+            See Product
+          </Button>
+        </div>
+      </div>
+      <div className="w-full h-[350px] md:h-72 relative rounded-lg overflow-hidden">
+        <Image
+          src={FeaturedProducts[1].imageUrl}
+          alt={FeaturedProducts[1].title}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg h-full"
+        />
+        <div className="absolute w-full h-full p-7 md:p-10 lg:p-20 flex items-start justify-center gap-7 flex-col">
+          <p className="uppercase text-black text-2xl md:text-4xl lg:text-3xl font-semibold w-8/12">
+            {FeaturedProducts[1].title}
+          </p>
+          <Button
+            variant="secondary"
+            onClick={() => navigateToProductPage(FeaturedProducts[1].id)}
+          >
+            See Product
+          </Button>
+        </div>
+      </div>
+      <div className="flex gap-5 flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-52 md:h-64 rounded-lg overflow-hidden relative">
+          <Image
+            src={FeaturedProducts[2].imageUrl}
+            alt={FeaturedProducts[2].title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg h-full"
+          />
+        </div>
+        <div className="w-full md:w-1/2 h-52 md:h-64 rounded-lg overflow-hidden p-7 md:p-10 lg:px-20 bg-light-grey flex flex-col items-start justify-center gap-7">
+          <p className="uppercase text-black text-2xl md:text-4xl lg:text-3xl font-semibold w-8/12">
+            {FeaturedProducts[1].title}
+          </p>
+          <Button
+            variant="secondary"
+            onClick={() => navigateToProductPage(FeaturedProducts[2].id)}
           >
             See Product
           </Button>
