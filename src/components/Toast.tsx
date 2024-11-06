@@ -1,0 +1,1 @@
+// types of toast: default, info, success, error, warning

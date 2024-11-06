@@ -32,7 +32,7 @@ const Categories = () => {
   ];
 
   const CategoryItem: React.FC<{ category: Category }> = ({ category }) => (
-    <Link href={category.href} passHref>
+    <Link href={category.href}>
       <div className="text-center cursor-pointer w-full h-44 lg:h-48 bg-light-grey rounded-lg relative flex flex-col items-center justify-end py-4">
         <div className="absolute -top-20 left-0 right-0 mx-auto flex justify-center">
           <Image
@@ -52,7 +52,7 @@ const Categories = () => {
           />
         </div>
         <p className="mt-8 text-lg uppercase font-semibold">{category.name}</p>
-        <Button variant="category" className="flex items-center gap-2 mt-2">
+        <Button variant="plain" className="flex items-center gap-2 mt-2">
           <p>Shop</p>
           <Image
             src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730662912/caret_right_hbwbxw.svg"
