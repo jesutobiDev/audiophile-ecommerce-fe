@@ -1,7 +1,5 @@
 "use client";
-import { useRouter, 
-  // useParams
- } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Header from "@/sections/Header";
 import Categories from "@/sections/Categories";
 import About from "@/sections/About";
@@ -10,7 +8,6 @@ import { ProductDetails } from "@/types/ProductDetails";
 import Image from "next/image";
 
 const Product = () => {
-  // const { productId } = useParams();
   const router = useRouter();
 
   const handleGoBack = () => {
@@ -30,28 +27,17 @@ const Product = () => {
       "The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5. 0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic.",
     ],
     inTheBox: [
-      {
-        name: "Headphone Unit",
-        quantity: 1,
-      },
-      {
-        name: "Replacement Earcups",
-        quantity: 2,
-      },
-      {
-        name: "User Manual",
-        quantity: 1,
-      },
-      {
-        name: "3.5mm 5m Audio Cable",
-        quantity: 1,
-      },
-      {
-        name: "Travel Bag",
-        quantity: 1,
-      },
+      { name: "Headphone Unit", quantity: 1 },
+      { name: "Replacement Earcups", quantity: 2 },
+      { name: "User Manual", quantity: 1 },
+      { name: "3.5mm 5m Audio Cable", quantity: 1 },
+      { name: "Travel Bag", quantity: 1 },
     ],
-    productGallery: [],
+    productGallery: [
+      "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730674678/man_qo73p2.svg",
+      "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730957007/gallery-2_ywzce6.svg",
+      "https://res.cloudinary.com/dxzq8zubp/image/upload/v1730957006/gallery-3_awsvkq.svg",
+    ],
     currency: "₦",
     totalQuantity: 10,
     quantityLeft: 5,
@@ -69,8 +55,8 @@ const Product = () => {
         >
           Go Back
         </Button>
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col px-5 md:px-10 gap-10 lg:px-40 py-7 lg:justify-between md:flex-row">
+        <div className="flex flex-col gap-10 px-5 md:px-10 lg:px-40">
+          <div className="flex flex-col gap-10 py-7 lg:justify-between md:flex-row">
             <div className="w-full lg:w-[400px] md:h-[400px] h-[300px] overflow-hidden rounded-lg bg-light-grey flex items-center justify-center relative">
               <div className="relative w-[220px] h-[250px]">
                 <Image
@@ -100,7 +86,7 @@ const Product = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 px-5 md:px-10 lg:px-40">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
             <div className="flex flex-col gap-5 lg:w-2/3">
               <h3 className="text-xl font-bold text-black uppercase">
                 Features
@@ -130,6 +116,23 @@ const Product = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+
+          {/* Product Gallery */}
+          <div className="flex gap-5 h-[750px] md:h-[500px] flex-col md:flex-row">
+            <div className="flex flex-col gap-5 flex-1">
+              {/* Left side images */}
+              <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
+                <Image src={product.productGallery[0]} alt="Gallery image 1" layout="fill" objectFit="cover" />
+              </div>
+              <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
+                <Image src={product.productGallery[1]} alt="Gallery image 2" layout="fill" objectFit="cover" />
+              </div>
+            </div>
+            {/* Right side image */}
+            <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
+              <Image src={product.productGallery[2]} alt="Gallery image 3" layout="fill" objectFit="cover" />
             </div>
           </div>
         </div>
