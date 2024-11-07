@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { RiCloseLargeFill } from "react-icons/ri";
+import Cart from "./Cart";
 
 interface NavLink {
   text: string;
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   ]);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
     setNavLinks((prevLinks) =>
@@ -53,9 +55,22 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
     }
   }, [menuOpen]);
 
+  // Disable/enacle scrolling when the cart is open/closed
+  useEffect(() => {
+    if (cartOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [cartOpen]);
+
+  const toggleCart = () => {
+    setCartOpen(!cartOpen);
+  }
+
   return (
-    <header className="bg-black text-white">
-      <nav className="py-7 flex justify-between items-center border-b border-white/30 px-5 md:px-10 lg:px-0 lg:mx-40">
+    <header className="bg-black text-white relative">
+      <nav className="h-20 w-screen flex justify-between items-center border-b border-white/30 px-5 md:px-10 lg:px-40">
         {/* Menu Icon */}
         <div className="cursor-pointer lg:hidden" onClick={toggleMenu}>
           <Image
@@ -92,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           ))}
         </ul>
         {/* Cart Icon */}
-        <div>
+        <div className="cursor-pointer" onClick={toggleCart}>
           <Image
             src="https://res.cloudinary.com/dxzq8zubp/image/upload/v1730628727/cart_fm8tja.svg"
             alt="cart icon"
@@ -101,6 +116,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
           />
         </div>
       </nav>
+      <Cart cartOpen={cartOpen} />
       {children}
     </header>
   );

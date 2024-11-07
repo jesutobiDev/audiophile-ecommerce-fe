@@ -29,9 +29,9 @@ const Button: React.FC<ButtonProps> = ({
 
   // Define styles for sizes
   const sizeStyles = {
-    small: 'px-2 py-1 text-sm',
+    small: 'text-sm',
     medium: 'px-4 py-2',
-    large: 'px-6 py-3 text-lg',
+    large: 'w-full',
   };
 
   return (

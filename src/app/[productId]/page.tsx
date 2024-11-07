@@ -7,14 +7,20 @@ import Button from "@/components/Button";
 import { ProductDetails } from "@/types/ProductDetails";
 import Image from "next/image";
 import QuantityControl from "@/components/QuantityControl";
+import { RootState } from "@/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_TO_CART } from "@/redux/slices/cartSlice";
+import { useState, useEffect } from "react";
 
 const Product = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart);
 
-  const handleGoBack = () => {
-    router.back();
-  };
+  const [quantity, setQuantity] = useState(1);
+  const [isInCart, setIsInCart] = useState(false);
 
+  // Sample product data
   const product: ProductDetails = {
     id: "xx99-mark-ii",
     name: "XX99 Mark II Headphones",
@@ -45,6 +51,29 @@ const Product = () => {
     relatedProduct: [],
   };
 
+  const handleGoBack = () => {
+    router.back();
+  };
+
+  const handleAddToCart = () => {
+    dispatch(
+      ADD_TO_CART({
+        productId: product.id,
+        name: product.name,
+        imageUrl: product.imageUrl,
+        price: product.price,
+        quantity,
+      })
+    );
+    setIsInCart(true);
+  };
+
+  useEffect(() => {
+    const itemInCart = cart.items.find((item) => item.productId === product.id);
+    setIsInCart(!!itemInCart);
+    setQuantity(itemInCart?.quantity || 1);
+  }, [cart, product.id]);
+
   return (
     <>
       <Header />
@@ -58,7 +87,7 @@ const Product = () => {
         </Button>
         <div className="flex flex-col gap-10 px-5 md:px-10 lg:px-40">
           <div className="flex flex-col gap-10 py-7 lg:justify-between md:flex-row">
-            <div className="w-full lg:w-[400px] md:h-[400px] h-[300px] overflow-hidden rounded-lg bg-light-grey flex items-center justify-center relative">
+            <div className="w-full md:w-[900px] lg:w-[400px] md:h-[400px] h-[300px] overflow-hidden rounded-lg bg-light-grey flex items-center justify-center relative">
               <div className="relative w-[220px] h-[250px]">
                 <Image
                   src={product.imageUrl}
@@ -85,9 +114,15 @@ const Product = () => {
               <p className="font-semibold text-lg">
                 {product.currency} {product.price}
               </p>
-              <div className="flex items-center gap-5">
-                <QuantityControl/>
-                <Button>Add to cart</Button>
+              <div className="flex items-center gap-5 w-full">
+                {isInCart ? (
+                  <QuantityControl quantity={quantity} productId={product.id} />
+                ) : (
+
+                    <Button onClick={handleAddToCart} size="large">
+                      Add to cart
+                    </Button>
+                )}
               </div>
             </div>
           </div>
@@ -117,7 +152,7 @@ const Product = () => {
                     <p className="text-primary font-semibold">
                       {item.quantity}x
                     </p>
-                    <p className="">{item.name}</p>
+                    <p>{item.name}</p>
                   </li>
                 ))}
               </ul>
@@ -129,15 +164,30 @@ const Product = () => {
             <div className="flex flex-col gap-5 flex-1">
               {/* Left side images */}
               <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
-                <Image src={product.productGallery[0]} alt="Gallery image 1" layout="fill" objectFit="cover" />
+                <Image
+                  src={product.productGallery[0]}
+                  alt="Gallery image 1"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
               <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
-                <Image src={product.productGallery[1]} alt="Gallery image 2" layout="fill" objectFit="cover" />
+                <Image
+                  src={product.productGallery[1]}
+                  alt="Gallery image 2"
+                  layout="fill"
+                  objectFit="cover"
+                />
               </div>
             </div>
             {/* Right side image */}
             <div className="flex-1 bg-light-grey rounded-lg overflow-hidden relative">
-              <Image src={product.productGallery[2]} alt="Gallery image 3" layout="fill" objectFit="cover" />
+              <Image
+                src={product.productGallery[2]}
+                alt="Gallery image 3"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
           </div>
         </div>

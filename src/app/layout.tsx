@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css"
 import Footer from "@/sections/Footer";
+import { Providers } from "./Provider";
 
 export const metadata: Metadata = {
   title: "Audiophile",
@@ -17,7 +18,9 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <main className="2xl:container 2xl:mx-auto">{children}</main>
+        <main className="2xl:container 2xl:mx-auto">
+          <Providers>{children}</Providers>
+        </main>
         <Footer />
       </body>
     </html>
