@@ -23,7 +23,8 @@ const Product = () => {
   // Sample product data
   const product: ProductDetails = {
     id: "xx99-mark-ii",
-    name: "XX99 Mark II Headphones",
+    name: "XX99 Mark II",
+    category: "Headphone",
     description:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     imageUrl:
@@ -65,7 +66,6 @@ const Product = () => {
         quantity,
       })
     );
-    setIsInCart(true);
   };
 
   useEffect(() => {
@@ -106,7 +106,7 @@ const Product = () => {
             </div>
             <div className="lg:w-[400px] lg:items-start lg:text-left md:justify-center flex flex-col gap-5">
               <p className="uppercase text-black text-3xl md:text-4xl lg:text-3xl font-bold w-8/12">
-                {product.name}
+                {product.name}{" "}{product.category}
               </p>
               <p className="text-black/50 text-sm md:w-9/12 lg:w-auto">
                 {product.description}

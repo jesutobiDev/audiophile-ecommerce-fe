@@ -6,6 +6,7 @@ interface BoxItem {
 
 export interface ProductDetails {
   id: string;
+  category: string
   name: string;
   description: string;
   imageUrl: string;

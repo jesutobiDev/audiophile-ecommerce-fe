@@ -9,11 +9,13 @@ import { FaRegTrashAlt } from "react-icons/fa";
 interface QuantityControlProps {
   quantity: number;
   productId: string;
+  variant?: "small" | "medium";
 }
 
 const QuantityControl: React.FC<QuantityControlProps> = ({
   quantity,
   productId,
+  variant = "medium",
 }) => {
   const dispatch = useDispatch();
 
@@ -31,24 +33,36 @@ const QuantityControl: React.FC<QuantityControlProps> = ({
     dispatch(REMOVE_FROM_CART(productId));
   };
 
+  const sizeStyles ={
+    small: "px-3 py-2",
+    medium: "px-5 py-3",
+  }
+
   return (
-    <div className="flex items-center gap-5">
-      <div className="bg-light-grey flex gap-x-7 items-center px-5 py-2">
+    <div className={`flex items-center gap-5`}>
+      <div
+        className={`flex items-center ${sizeStyles[variant]} bg-light-grey gap-x-7`}
+      >
         <button
-          className="cursor-pointer hover:text-primary font-semibold transition-all duration-300 ease-in-out px-1 text-dark-grey py-2"
+          className={`cursor-pointer hover:text-primary font-semibold transition-all duration-300 ease-in-out text-black/25 text-lg px-1`}
           onClick={handleDecrement}
         >
           -
         </button>
-        <p className="font-semibold">{quantity}</p>
+        <p className={`font-semibold text-black`}>
+          {quantity}
+        </p>
         <button
-          className="cursor-pointer hover:text-primary font-semibold transition-all duration-300 ease-in-out px-1 text-dark-grey py-2"
+          className={`cursor-pointer hover:text-primary font-semibold transition-all duration-300 ease-in-out text-black/25 text-lg px-1`}
           onClick={handleIncrement}
         >
           +
         </button>
       </div>
-      <FaRegTrashAlt className="hover:text-primary transition-all duration-300 ease-in-out cursor-pointer text-xl text-black/70" onClick={handleRemove} />
+      <FaRegTrashAlt
+        className={`hover:text-primary transition-all duration-300 ease-in-out cursor-pointer text-black/70`}
+        onClick={handleRemove}
+      />
     </div>
   );
 };
