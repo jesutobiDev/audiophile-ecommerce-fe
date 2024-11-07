@@ -6,6 +6,7 @@ import About from "@/sections/About";
 import Button from "@/components/Button";
 import { ProductDetails } from "@/types/ProductDetails";
 import Image from "next/image";
+import QuantityControl from "@/components/QuantityControl";
 
 const Product = () => {
   const router = useRouter();
@@ -84,6 +85,10 @@ const Product = () => {
               <p className="font-semibold text-lg">
                 {product.currency} {product.price}
               </p>
+              <div className="flex items-center gap-5">
+                <QuantityControl/>
+                <Button>Add to cart</Button>
+              </div>
             </div>
           </div>
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
