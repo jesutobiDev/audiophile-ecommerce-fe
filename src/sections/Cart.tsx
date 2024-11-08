@@ -24,7 +24,7 @@ const Cart: React.FC<CartProps> = ({ cartOpen }) => {
 
   const navigateCart = () => {
     if (cart.items.length === 0) {
-      router.push("/home");
+      router.push("/");
     } else {
       router.push("/checkout");
     }

@@ -77,15 +77,15 @@ const Product = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="px-5 md:px-10 lg:px-40">
         <Button
           onClick={handleGoBack}
           variant="plain"
-          className="px-5 md:px-10 lg:px-40 py-3 mt-7"
+          className=" py-3 mt-7 mb-4 capitalize"
         >
           Go Back
         </Button>
-        <div className="flex flex-col gap-10 px-5 md:px-10 lg:px-40">
+        <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-10 py-7 lg:justify-between md:flex-row">
             <div className="w-full md:w-[900px] lg:w-[400px] md:h-[400px] h-[300px] overflow-hidden rounded-lg bg-light-grey flex items-center justify-center relative">
               <div className="relative w-[220px] h-[250px]">
