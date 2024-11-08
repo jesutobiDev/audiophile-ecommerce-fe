@@ -58,12 +58,12 @@ const Checkout = () => {
     (state: RootState) => state.checkoutForm.country.error
   );
 
-  const paymentMethod = useSelector(
-    (state: RootState) => state.checkoutForm.paymentMethod.value
-  );
-  const paymentMethodError = useSelector(
-    (state: RootState) => state.checkoutForm.paymentMethod.error
-  );
+  // const paymentMethod = useSelector(
+  //   (state: RootState) => state.checkoutForm.paymentMethod.value
+  // );
+  // const paymentMethodError = useSelector(
+  //   (state: RootState) => state.checkoutForm.paymentMethod.error
+  // );
 
   const eMoneyNumber = useSelector(
     (state: RootState) => state.checkoutForm.eMoneyNumber.value
@@ -108,11 +108,11 @@ const Checkout = () => {
     dispatch(updateField({ field: "country", value: e.target.value }));
   };
 
-  const handlePaymentMethodChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    dispatch(updateField({ field: "paymentMethod", value: e.target.value }));
-  };
+  // const handlePaymentMethodChange = (
+  //   e: React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   dispatch(updateField({ field: "paymentMethod", value: e.target.value }));
+  // };
 
   const handleEMoneyNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(updateField({ field: "eMoneyNumber", value: e.target.value }));
@@ -167,9 +167,9 @@ const Checkout = () => {
                   type="tel"
                   placeholder="+1 202-555-0136"
                   label="Phone Number"
-                  value={email}
+                  value={phoneNumber}
                   name="email"
-                  error={emailError}
+                  error={phoneNumberError}
                   onChange={handlePhoneNumberChange}
                   className="md:w-1/2"
                 />
