@@ -61,7 +61,7 @@ const Cart: React.FC<CartProps> = ({ cartOpen }) => {
 
   return (
     <div
-      className={`absolute left-0 top-20 w-screen h-screen bg-black/30 z-50 px-5 md:px-10 lg:px-40 justify-end ${
+      className={`absolute left-0 top-20 mb-7 w-screen h-screen bg-black/30 z-50 px-5 md:px-10 lg:px-40 justify-end ${
         cartOpen ? "flex" : "hidden"
       }`}
     >

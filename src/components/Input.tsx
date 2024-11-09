@@ -10,7 +10,7 @@ interface InputProps {
   disabled?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
-  checked?: boolean; // Added optional checked prop
+  checked?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -23,11 +23,11 @@ const Input: React.FC<InputProps> = ({
   disabled = false,
   onChange,
   className = '',
-  checked = false, // Default checked to false if not provided
+  checked = false,
 }) => {
   return (
     <div
-      className={`flex w-full lg:min-w-1/2 ${className} ${
+      className={`flex w-full lg:min-w-1/2 ${className} ${checked ? "border-primary" : ""} ${
         type === "radio"
           ? 'flex-row-reverse gap-3 items-center justify-start p-3 border-[1.35px] rounded-lg outline-none transition duration-200 ease-in-out'
           : 'flex-col space-y-2'
@@ -53,14 +53,14 @@ const Input: React.FC<InputProps> = ({
         disabled={disabled}
         onChange={onChange}
         checked={checked}
-        className={` ${
-          error
-            ? "border-red-500 focus:border-red-500"
-            : "border-gray-300 focus:border-primary"
-        } ${
+        className={`${
           type === "radio"
             ? 'accent-primary transform scale-125'
             : 'p-3 border-[1.35px] rounded-lg outline-none transition duration-200 ease-in-out placeholder:font-semibold placeholder:text-sm'
+        } ${
+          error
+            ? "border-red-500 focus:border-red-500"
+            : "border-gray-300 focus:border-primary"
         }`}
       />
 

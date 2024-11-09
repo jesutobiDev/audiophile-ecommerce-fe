@@ -4,7 +4,6 @@ import { useNavigateToProductPage } from "@/utils/useNavigation";
 import Image from "next/image";
 
 const FeaturedProducts = () => {
-  const navigateToProductPage = useNavigateToProductPage();
   const FeaturedProducts: Product[] = [
     {
       id: "zx9",
@@ -60,7 +59,7 @@ const FeaturedProducts = () => {
           </p>
           <Button
             variant="tertiary"
-            onClick={() => navigateToProductPage(FeaturedProducts[0].id)}
+            onClick={useNavigateToProductPage(FeaturedProducts[0].id)}
           >
             See Product
           </Button>
@@ -80,7 +79,7 @@ const FeaturedProducts = () => {
           </p>
           <Button
             variant="secondary"
-            onClick={() => navigateToProductPage(FeaturedProducts[1].id)}
+            onClick={useNavigateToProductPage(FeaturedProducts[1].id)}
           >
             See Product
           </Button>
@@ -102,7 +101,7 @@ const FeaturedProducts = () => {
           </p>
           <Button
             variant="secondary"
-            onClick={() => navigateToProductPage(FeaturedProducts[2].id)}
+            onClick={useNavigateToProductPage(FeaturedProducts[2].id)}
           >
             See Product
           </Button>

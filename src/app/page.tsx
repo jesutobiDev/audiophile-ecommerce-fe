@@ -9,7 +9,6 @@ import About from "@/sections/About";
 import FeaturedProducts from "@/sections/FeaturedProducts";
 
 const HomePage = () => {
-  const navigateToProductPage = useNavigateToProductPage();
 
   const product: Product = {
     id: "xx99-mark-ii",
@@ -32,7 +31,7 @@ const HomePage = () => {
             <p className="opacity-75 w-10/12 md:text-lg lg:text-base">
               {product.description}
             </p>
-            <Button onClick={() => navigateToProductPage(product.id)}>
+            <Button onClick={useNavigateToProductPage(product.id)}>
               SEE PRODUCT
             </Button>
           </div>

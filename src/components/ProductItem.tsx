@@ -10,7 +10,6 @@ interface ProductItemProps {
 }
 
 const ProductItem = ({ product, isReversed }: ProductItemProps) => {
-  const navigateToProductPage = useNavigateToProductPage();
   return (
     <div
       className={`flex flex-col px-10 gap-10 lg:px-40 py-7 lg:justify-between ${
@@ -41,7 +40,7 @@ const ProductItem = ({ product, isReversed }: ProductItemProps) => {
         <p className="text-black/50 text-sm md:w-9/12 lg:w-auto">
           {product.description}
         </p>
-        <Button onClick={() => navigateToProductPage(product.id)}>
+        <Button onClick={useNavigateToProductPage(product.id)}>
           See Product
         </Button>
       </div>

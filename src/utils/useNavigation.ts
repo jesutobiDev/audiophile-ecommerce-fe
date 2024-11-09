@@ -1,10 +1,10 @@
 'use client'
 import { useRouter } from "next/navigation";
 
-export const useNavigateToProductPage = () => {
+export const useNavigateToProductPage = (productId:string) => {
   const router = useRouter();
 
-  return (productId: string) => {
+  return () => {
     router.push(`/${productId}`);
   };
 };
