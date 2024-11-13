@@ -18,7 +18,7 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <main className="2xl:container 2xl:mx-auto">
+        <main className="2xl:container 2xl:mx-auto overflow-x-hidden">
           <Providers>{children}</Providers>
         </main>
         <Footer />

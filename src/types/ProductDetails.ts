@@ -3,6 +3,12 @@ interface BoxItem {
   quantity: number;
 }
 
+interface relatedProductItem{
+  imageUrl: string;
+  name: string;
+  productId: string;
+}
+
 
 export interface ProductDetails {
   id: string;
@@ -17,5 +23,5 @@ export interface ProductDetails {
   currency: string;
   totalQuantity: number;
   quantityLeft: number;
-  relatedProduct: string[];
+  relatedProduct: relatedProductItem[];
 }
