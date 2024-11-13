@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="antialiased"
+        className="antialiased overflow-x-hidden"
       >
         <main className="2xl:container 2xl:mx-auto overflow-x-hidden">
           <Providers>{children}</Providers>
